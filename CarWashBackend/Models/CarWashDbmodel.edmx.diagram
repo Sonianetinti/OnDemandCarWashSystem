@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5644892fc8b44698be8cfc3bca5841ed" Name="Diagram1">
+        <EntityTypeShape EntityType="CarWashDbModel.Addon" Width="1.5" PointX="5.625" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarWashDbModel.Address" Width="1.5" PointX="2.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarWashDbModel.Admin" Width="1.5" PointX="5.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarWashDbModel.Car" Width="1.5" PointX="7.375" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarWashDbModel.Order" Width="1.5" PointX="4.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarWashDbModel.Package" Width="1.5" PointX="2.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarWashDbModel.PromoCode" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarWashDbModel.UserTable" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="CarWashDbModel.address_Id_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="CarWashDbModel.order_addressIdFk" ManuallyRouted="false" />
+        <AssociationConnector Association="CarWashDbModel.order_packageid_Fk" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

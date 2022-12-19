@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "HomePage";
+}
+
+<style>
+    body {
+        background-image: url('https://www.carcility.com/blog/wp-content/uploads/2020/06/steam-car-wash.jpg');
+        background-position: inherit;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    h2,h6, a {
+        color: white;
+    }
+    
+
+    .links {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+</style>
+<h2 style="text-align:center">WELCOME TO ONDEMAND CARWASH SYSTEM</h2>
+
+<div class="links">
+    
+    
+    @Html.ActionLink("Login", "LoginUser")<h6>to use our services</h6>@Html.ActionLink("Register", "Create")
+</div>
+
+
+
+
