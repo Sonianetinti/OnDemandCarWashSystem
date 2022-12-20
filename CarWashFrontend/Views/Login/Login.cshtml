@@ -1,30 +1,17 @@
 ﻿@model CarWashFrontend.Models.LoginViewModel
 
 @{
-    ViewBag.Title = "LoginUser";
+    ViewBag.Title = "Login";
 }
 
-<style>
-
-    body {
-        background-image: url('https://www.shell.ca/en_ca/motorists/shell-canada-car-wash/_jcr_content/par/grid_562368221/p0/contentblock_copy/image.img.960.jpeg/1664395343561/carwash.jpeg?imwidth=960');
-        background-position: inherit;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    a{
-        color:black;
-    }
-
-</style>
-<h2>AdminLogin</h2>
+<h2>Login</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        
+        <h4>LoginViewModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -45,15 +32,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Login" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
-<div class="links">
-   
-
-
-
+<div>
+    @Html.ActionLink("Back to List", "Index")
 </div>

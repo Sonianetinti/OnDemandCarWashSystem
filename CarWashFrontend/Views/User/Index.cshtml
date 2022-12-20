@@ -5,10 +5,17 @@
 }
 
 <h2>List of Users</h2>
-
-<p>
-   
-</p>
+<style>
+  body {
+        background-image: url('https://www.shell.ca/en_ca/motorists/shell-canada-car-wash/_jcr_content/par/grid_562368221/p0/contentblock_copy/image.img.960.jpeg/1664395343561/carwash.jpeg?imwidth=960');
+        background-position: inherit;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+  a{
+      color:black;
+  }
+  </style>
 <table class="table">
     <tr>
         <th>
@@ -23,7 +30,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
-      
+
         <th>
             @Html.DisplayNameFor(model => model.Role)
         </th>
@@ -33,33 +40,32 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhoneNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-      
-        <td>
-            @Html.DisplayFor(modelItem => item.Role)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-           
-            
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td> 
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>

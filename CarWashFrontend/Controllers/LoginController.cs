@@ -26,8 +26,12 @@ namespace CarWashFrontend.Controllers
         {
             return View();
         }
+        public ActionResult IncorrectPass()
+        {
+            return View();
+        }
 
-
+        #region login
         [HttpPost]
         public async Task<ActionResult> LoginUser(LoginViewModel login)
         {
@@ -49,6 +53,7 @@ namespace CarWashFrontend.Controllers
                     if (newUser != null)
                     {
                         ViewBag.message = "Login Success";
+                        return RedirectToAction("AdminPage");
                     }
                     else
                     {
@@ -65,42 +70,11 @@ namespace CarWashFrontend.Controllers
             
 
         }
-        
+        #endregion
 
-
-        //This Post Method will validate the userName & Password valid or not using WebAPI
-        [HttpPost]
-        public ActionResult LoginUsers(UserViewModel Ur)
-        {
-            if (!(string.IsNullOrEmpty(Ur.Email) || string.IsNullOrEmpty(Ur.Password)))
-            {
-
-                if (!ModelState.IsValid)
-                {
-                    HttpClient hc = new HttpClient();
-                    hc.BaseAddress = new Uri("https://localhost:44355/api/Login"); // URL for Login WebAPI
-                    var checkLoginDetails = hc.PostAsJsonAsync<UserViewModel>("Login", Ur);//Asynchronosly passing the values in Json Format to API
-                    var checkrec = checkLoginDetails.Result;//Checking the User Login ID & Password 
-
-                    //Condition for Successfull Login We need to Navigate to Flght Seach Page 
-                    if ((int)checkrec.StatusCode == 200)
-                    {
-                        ViewBag.message = "Login Success!!";
-                    }
-                    //Condition for Invalid User Name & Password
-                    if ((int)checkrec.StatusCode == 426)
-                    {
-                        ViewBag.message = "Invalid User Id & Password";
-                    }
-
-                }
-            }
-            return View();
-
-        }
 
         //Action method to create user
-        #region
+        #region Register
         public async Task<ActionResult> Create(UserViewModel user)
         {
             if (ModelState.IsValid)

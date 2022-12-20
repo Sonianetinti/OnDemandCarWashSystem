@@ -24,7 +24,7 @@ namespace CarWashBackend.Controllers
         [Route("")]
         public IHttpActionResult CreateUser(Car car)
         {
-            Package carObj = null;
+            Car carObj = null;
             try
             {
                 if (!ModelState.IsValid)
@@ -89,7 +89,7 @@ namespace CarWashBackend.Controllers
         //ActionMethod to get User by Id
         #region
         [HttpGet]
-        public Package GetById(int Id)
+        public Car GetById(int Id)
         {
             var user = _car.GetById(Id);
             return user;

@@ -11,13 +11,13 @@ namespace CarWashBackend.Repository
     {
         IEnumerable<TEntity> Get();
 
-        Package GetById(int id);
+        Car GetById(int id);
 
         void Add(TEntity user);
 
         void Delete(int Id);
 
-        void Update(int Id,Car car);
+        void Update(int Id,Car  car);
         void SaveChanges();
     }
 }

@@ -74,27 +74,29 @@ namespace CarWashFrontend.Controllers
                 return RedirectToAction("CarDetails");
             }
         }
-
-
         #region
-        public async Task<ActionResult> Create(CarViewModel car)
+
+        public async Task<ActionResult> CreateCar(CarViewModel car)
         {
             if (ModelState.IsValid)
             {
-                CarViewModel cars = new CarViewModel();
+                CarViewModel newCar = new CarViewModel();
                 var service = new ServiceRepository();
                 {
-                    using (var response = service.PostResponse("Car",car))
+                    using (var response = service.PostResponse("Car/", car))
                     {
                         string apiResponse = await response.Content.ReadAsStringAsync();
-                        cars = JsonConvert.DeserializeObject<CarViewModel>(apiResponse);
+                        //newUser = JsonConvert.DeserializeObject<UserViewModel>(apiResponse);
                     }
                 }
+
+
+
                 return RedirectToAction("CarDetails");
             }
             return View(car);
         }
-        #endregion
+#endregion
 
 
     }

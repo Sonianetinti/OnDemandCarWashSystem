@@ -6,9 +6,18 @@
 
 <h2>CarDetails</h2>
 
+<style>
+    body {
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpWjHUImZsuU3tH_S32Ejd06jgqGPGR8bQuA&usqp=CAU');
+        background-position: inherit;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
 <p>
-   
+    @Html.ActionLink("Create New", "CreateCar")
 </p>
+
 <table class="table">
     <tr>
         <th>
@@ -20,19 +29,20 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CarModel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) ||
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) ||
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>
